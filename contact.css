@@ -1,0 +1,106 @@
+@charset "UTF-8";
+ul
+{
+margin-left:0px;
+margin-top:10px;
+list-style: none;
+}
+ul li
+{
+float: left;
+width: 168px;
+height: 40px;
+background-color:#333;
+
+line-height: 40px;
+text-align: center;
+font-size: 20px;
+margin-right:2px;
+
+}
+ul li a
+{
+text-decoration:none;
+color:#000000;
+display:block;
+}
+
+ul li a:hover
+{
+ background-color: #F7CA18; ;
+
+}
+ul li ul li
+{
+display:none;
+font-size: 15px;
+}
+ul li:hover ul li
+{
+display:block;
+}
+h4
+{
+color: black;
+font-size:45px;
+text-align: center;
+
+background-color:#333;
+}
+
+.frm{
+   font-size: 28px;
+   border-style:double;
+}
+body{
+    background-color: #d6eaf3;
+}
+.bg-img {
+   
+    background-image: url("/assets/contbg.jpg");
+  
+    min-height: 380px;
+  
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+   
+    position: relative;
+  }
+  
+  
+  .container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+  }
+  
+  /* The navbar */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .top-left {
+      font-size: 28px;
+    position: absolute;
+    top: 60px;
+    left: 16px;
+  }
+
