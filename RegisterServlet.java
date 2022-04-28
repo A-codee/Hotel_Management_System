@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 	public class RegisterServlet extends HttpServlet{
 	   
-    private static final String INSERT_QUERY = "INSERT INTO USER(FIRSTNAME,LASTNAME,EMAIL,PHONENO,PASSWORD)VALUES (?,?,?,?,?)";
+    private static final String INSERT_QUERY = "INSERT INTO USERSIGNUP(FIRSTNAME,LASTNAME,EMAIL,PHONENO,PASSWORD)VALUES (?,?,?,?,?)";
 	 
 	private static final long serialVersionUID = 1L;
 
@@ -35,19 +35,21 @@ import javax.servlet.http.HttpServletResponse;
 	        String lastname = req.getParameter ("lastname");
 	        String email = req.getParameter ("email");
 	        String phoneno = req.getParameter("phoneno");
+	        String password = req.getParameter("password");
 	       
 	        
 	        System.out.println("firstname " +firstname);
 	        System.out.println("lastname " +lastname);
 	        System.out.println("email " +email);
 	        System.out.println("phoneno "+phoneno);
+	        
 	      try {
 	        Class.forName("com.mysql.cj.jdbc.Driver");
 	      }
 	      catch(ClassNotFoundException e) {
 	    	  e.printStackTrace();
 	      }
-	      try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3308/hmsdb","roo","root123");
+	      try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hms","root","");
 	
 	    	   PreparedStatement ps = con.prepareStatement(INSERT_QUERY);){
 	           //set values
@@ -55,7 +57,7 @@ import javax.servlet.http.HttpServletResponse;
 	    	  ps.setString(2, lastname);
 	    	  ps.setString(3, email);
 	    	  ps.setString(4, phoneno);
-	    	 //ps.setString(5, password);
+	    	  ps.setString(5,password );
 	    	  
 	    	  //execute the query
 	    	  int count =  ps.executeUpdate();
